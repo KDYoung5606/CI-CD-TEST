@@ -77,3 +77,11 @@ tasks.withType(JavaCompile) {
 clean {
 	delete file(querydslDir)
 }
+tasks.withType(JavaCompile) {
+	options.compilerArgs += [
+			'--add-opens',
+			'java.base/java.lang=ALL-UNNAMED',
+			'--add-opens',
+			'java.base/java.util=ALL-UNNAMED'
+	]
+}
